@@ -7,20 +7,16 @@ class App extends Component {
   state = {
     firstValue: 0,
     // currentOperator: "",
-    result: 0,
+    result: '',
+    secondValue: 0,
   }
   grabNumber = (number) => { 
     this.setState({
-    result: this.state.result + number
+    result:this.state.result +[number]
+    // firstValue: this.state.firstValue + number
     
     })
   }
-
-  // mathFunction = () => {
-  //   if(onClick === "="){
-  //     this.calculate()
-  // }
-  // else if(onClick === "clear")
 
   calculate = () => {
     try {
@@ -38,7 +34,7 @@ class App extends Component {
 
   reset = () => {
     this.setState({
-      result: 0
+      result: ''
     })
   }
 
@@ -48,7 +44,8 @@ class App extends Component {
       <div className="calculator">
         <div>
           <h1 className="calculator-title">{this.state.result}</h1>
-          {/* <p className="calculator-title">{this.state.firstValue}</p> */}
+          {/* <p className="calculator-title">{this.state.firstValue}</p>
+          <p className="calculator-title">{this.state.secondValue}</p> */}
         </div>
         <div className="calculateButtons">
           <div className="row">
